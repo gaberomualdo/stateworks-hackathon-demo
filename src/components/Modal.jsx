@@ -352,16 +352,16 @@ export default function Modal({ open, setOpen }) {
                       </div>
                       <div className="mt-2 flex-col space-y-3 text-blue-600">
                         <a
-                          className="text-sm"
+                          className="block text-sm"
                           href={`https://opensea.io/assets/matic/${contractAddress}/0`}
                         >
                           Your World Membership &nbsp;&rarr;
                         </a>
                         <a
-                          className="text-sm"
+                          className="block text-sm"
                           href={`https://opensea.io/assets/matic/${contractAddress}/${countryId}`}
                         >
-                          Your World Membership &nbsp;&rarr;
+                          Your Country Membership &nbsp;&rarr;
                         </a>
                       </div>
                     </div>
