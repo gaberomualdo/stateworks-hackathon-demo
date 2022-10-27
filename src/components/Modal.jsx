@@ -7,6 +7,7 @@ import {
   useWaitForTransaction,
 } from 'wagmi'
 const countries = {
+  '': 'Select Country',
   AF: 'Afghanistan',
   AL: 'Albania',
   DZ: 'Algeria',
@@ -301,7 +302,7 @@ export default function Modal({ open, setOpen }) {
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   })
-  console.log(write)
+
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -399,9 +400,10 @@ export default function Modal({ open, setOpen }) {
                         name="location"
                         className="mt-0 block w-48 rounded-md border border-gray-300 py-2.5 pl-3 pr-3 text-base shadow-sm focus:outline-none sm:text-sm"
                         onChange={(e) => setCountry(e.target.value)}
+                        value={country || ''}
                       >
                         {Object.keys(countries).map((country) => (
-                          <option key={country} value={country}>
+                          <option key={country} value={country} disabled={country === ''}>
                             {countries[country]}
                           </option>
                         ))}
